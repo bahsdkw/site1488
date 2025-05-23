@@ -1,28 +1,43 @@
 /* Базовые стили */
 body {
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #F8F9FA; /* Новый фон */
+    color: #343A40; /* Новый основной цвет текста */
+}
+
+a {
+    color: #007BFF; /* Новый цвет ссылок */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3; /* Новый цвет ссылок при наведении */
+    text-decoration: underline;
 }
 
 header {
-    background-color: #333;
+    background-color: #343A40; /* Новый фон хедера */
     color: #fff;
-    padding: 1rem 0;
+    padding: 1.5rem 0; /* Новый padding хедера */
     text-align: center;
 }
 
 header h1 {
     margin: 0;
+    font-weight: 500;
 }
 
 nav {
-    background-color: #444;
-    padding: 0.5rem;
+    background-color: #495057; /* Новый фон навигации */
+    padding: 0.75rem; /* Новый padding навигации */
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Добавим небольшую тень для прилипшей навигации */
 }
 
 nav ul {
@@ -33,71 +48,85 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 10px; /* Немного уменьшим отступ для компактности */
+}
+
+nav ul li:last-child {
+    margin-right: 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease; /* CSS Transition */
+    padding: 8px 15px; /* Новый padding для ссылок в nav */
+    border-radius: 6px; /* Новый border-radius для ссылок в nav */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 nav ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
+    background-color: #007BFF; /* Новый фон при наведении */
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+    transform: translateY(-2px);
 }
 
 main {
-    padding: 20px;
+    padding: 30px; /* Новый padding для main */
 }
 
 section {
-    background-color: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #FFFFFF; /* Новый фон секций */
+    margin-bottom: 25px; /* Новый margin-bottom для секций */
+    padding: 25px; /* Новый padding для секций */
+    border-radius: 12px; /* Новый border-radius для секций */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Новый box-shadow для секций */
 }
 
 section h2 {
-    color: #333;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 10px;
+    color: #000000; /* Новый цвет заголовков секций */
+    border-bottom: 2px solid #e9ecef; /* Более светлый разделитель */
+    padding-bottom: 15px; /* Новый padding-bottom */
+    margin-bottom: 20px; /* Новый margin-bottom */
+    font-weight: 500;
 }
 
+/* section h2::before было удалено/закомментировано согласно заданию */
+
 article {
-    border: 1px solid #ddd;
+    border: 1px solid #dee2e6;
     padding: 15px;
-    margin-top: 10px;
-    background-color: #f9f9f9;
+    margin-top: 15px;
+    background-color: #fdfdfd;
+    border-radius: 6px;
 }
 
 aside {
-    border-left: 3px solid #ccc;
-    padding-left: 10px;
-    margin-top: 10px;
+    border-left: 3px solid #adb5bd;
+    padding-left: 15px;
+    margin-top: 15px;
     font-style: italic;
-    color: #555;
+    color: #495057;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 4px;
 }
 
 footer {
     text-align: center;
-    padding: 1rem;
-    background-color: #333;
+    padding: 1.5rem; /* Новый padding */
+    background-color: #343A40; /* Новый фон */
     color: #fff;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 /* Стили для форм */
 form div {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 form label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: .5rem;
+    font-weight: 500;
 }
 
 form input[type="text"],
@@ -106,11 +135,23 @@ form input[type="password"],
 form input[type="date"],
 form textarea,
 form input[type="file"] {
-    width: calc(100% - 22px); /* Учитываем padding и border */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Важно для корректного расчета ширины */
+    width: calc(100% - 24px); /* Учитываем новый padding */
+    padding: 12px; /* Новый padding */
+    border: 1px solid #ced4da; /* Новая граница */
+    border-radius: 6px; /* Новый border-radius */
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Новая анимация */
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form textarea:focus,
+form input[type="file"]:focus {
+    border-color: #80bdff; /* Новая граница при фокусе */
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Новый box-shadow при фокусе */
 }
 
 form textarea {
@@ -118,25 +159,40 @@ form textarea {
 }
 
 form button {
-    background-color: #5cb85c;
     color: white;
-    padding: 10px 15px;
+    padding: 12px 18px; /* Новый padding */
     border: none;
-    border-radius: 4px;
+    border-radius: 6px; /* Новый border-radius */
     cursor: pointer;
-    transition: background-color 0.3s ease; /* CSS Transition */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    font-weight: 500; /* Новый font-weight */
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-form button:hover {
-    background-color: #4cae4c;
+form button[type="submit"] {
+    background-color: #007BFF; /* Новый фон */
+    border: 1px solid #007BFF; /* Новый border */
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3; /* Новый фон при наведении */
+    border-color: #0056b3; /* Новый border при наведении */
 }
 
 form button[type="reset"] {
-    background-color: #f0ad4e;
+    background-color: #6c757d; /* Новый фон */
+    border: 1px solid #6c757d; /* Новый border */
 }
 
 form button[type="reset"]:hover {
-    background-color: #eea236;
+    background-color: #5a6268; /* Новый фон при наведении */
+    border-color: #545b62; /* Новый border при наведении */
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    margin-right: 5px;
 }
 
 /* Стили для таблиц */
@@ -144,30 +200,40 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border-radius: 8px; /* Новый border-radius */
+    overflow: hidden; /* Для применения border-radius к углам таблицы */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 table caption {
     font-size: 1.2em;
     margin-bottom: 10px;
     font-weight: bold;
+    color: #343A40;
 }
 
 table th, table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #dee2e6; /* Более светлая граница */
+    padding: 12px; /* Увеличенный padding */
     text-align: left;
 }
 
 table th {
-    background-color: #f2f2f2;
+    background-color: #e9ecef; /* Новый фон заголовков таблицы */
+    font-weight: 600;
 }
 
-table tbody tr:nth-child(even) { /* Псевдокласс :nth-child */
-    background-color: #f9f9f9;
+table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tbody tr:hover {
+    background-color: #e9ecef;
 }
 
 table tfoot {
     font-weight: bold;
+    background-color: #e9ecef;
 }
 
 /* Мультимедиа */
@@ -176,98 +242,156 @@ section#multimedia img {
     height: auto;
     display: block;
     margin-top: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #dee2e6;
     padding: 5px;
+    border-radius: 6px;
 }
-
 
 /* Демонстрация Flexbox */
 .flex-container-demo {
     display: flex;
-    justify-content: space-around; /* Распределение элементов */
-    background-color: #dodgerblue;
-    padding: 10px;
-    border-radius: 5px;
+    justify-content: space-around;
+    background-color: #007BFF; /* Обновленный цвет для наглядности */
+    padding: 15px;
+    border-radius: 8px;
     margin-top: 15px;
 }
 
 .flex-item-demo {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #f8f9fa;
+    color: #343A40;
     padding: 20px;
     margin: 5px;
-    border-radius: 3px;
+    border-radius: 6px;
     text-align: center;
-    flex-basis: 100px; /* Базовый размер элемента */
+    flex-basis: 120px; /* Немного увеличим */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.07);
 }
 
 /* Демонстрация CSS Grid */
 .grid-container-demo {
     display: grid;
-    grid-template-columns: auto auto auto; /* 3 колонки равной ширины */
-    gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
-    border-radius: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Адаптивные колонки */
+    gap: 15px; /* Увеличенный gap */
+    background-color: #28A745; /* Обновленный цвет для наглядности */
+    padding: 15px;
+    border-radius: 8px;
     margin-top: 15px;
 }
 
 .grid-item-demo {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
     padding: 20px;
     font-size: 18px;
-    border-radius: 3px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.07);
 }
 
 /* Демонстрация CSS Animation */
 .animated-box {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    margin: 20px auto;
-    animation-name: colorChange; /* Имя анимации */
-    animation-duration: 4s; /* Длительность */
-    animation-iteration-count: infinite; /* Бесконечное повторение */
-    animation-direction: alternate; /* Вперед и назад */
+    width: 120px; /* Увеличен */
+    height: 120px; /* Увеличен */
+    background-color: #DC3545; /* Красный для старта */
+    margin: 25px auto;
+    animation-name: colorChange;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 14px;
+    font-size: 16px; /* Увеличен */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-@keyframes colorChange { /* Определение анимации */
-    0%   { background-color: red; transform: scale(1); }
-    50%  { background-color: yellow; transform: scale(1.2) rotate(45deg); }
-    100% { background-color: blue; transform: scale(1); }
+@keyframes colorChange {
+    0%   { background-color: #DC3545; transform: scale(1) rotate(0deg); } /* Красный */
+    50%  { background-color: #FFC107; transform: scale(1.1) rotate(20deg); } /* Желтый */
+    100% { background-color: #007BFF; transform: scale(1) rotate(0deg); } /* Синий */
 }
 
-/* Псевдоэлементы */
-section h2::before { /* Псевдоэлемент ::before */
-    content: "🔹 ";
-    color: #007bff;
+/* Интерактивные элементы из JS демонстрации */
+#hover-box {
+    background-color: #17A2B8; /* Новый фон */
+    color: white; /* Новый цвет текста */
+    width: 220px; /* Немного увеличим */
+    height: 60px; /* Немного увеличим */
+    line-height: 60px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
 }
+
+#hover-box:hover {
+    background-color: #138496; /* Новый фон при наведении */
+}
+
+.accordion-button {
+    background-color: #e9ecef; /* Новый фон */
+    color: #343A40; /* Новый цвет текста */
+    border: 1px solid #ced4da; /* Новая граница */
+    width: 100%;
+    text-align: left;
+    padding: 12px; /* Новый padding */
+    border-radius: 6px; /* Новый border-radius */
+    margin-top: 8px; /* Новый margin-top */
+    transition: background-color 0.2s ease; /* Новая анимация */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.accordion-button:hover,
+.accordion-button.active { /* .active класс обычно добавляется JS для активного элемента */
+    background-color: #d1d9e0; /* Новый фон при наведении/активном состоянии */
+}
+
+.accordion-content {
+    border: 1px solid #ced4da; /* Новая граница */
+    border-top: none; /* Убираем верхнюю границу, т.к. она есть у кнопки */
+    padding: 15px; /* Новый padding */
+    border-radius: 0 0 6px 6px; /* Новый border-radius */
+    background-color: #fff; /* Новый фон */
+    margin-bottom: 8px; /* Добавим отступ снизу */
+}
+
+#toggle-element {
+    background-color: #28A745; /* Новый фон */
+    color: white; /* Новый цвет текста */
+    padding: 25px; /* Новый padding */
+    border-radius: 6px; /* Новый border-radius */
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
 
 /* Responsive Design - Медиа-запросы */
 @media (max-width: 768px) {
     nav ul li {
-        display: block; /* Элементы навигации в столбик на малых экранах */
+        display: block;
         margin-bottom: 10px;
         text-align: center;
     }
 
     nav ul li:last-child {
         margin-right: 0;
+        margin-bottom: 0;
     }
     
     .flex-container-demo {
-        flex-direction: column; /* Flex элементы в колонку */
+        flex-direction: column;
+        align-items: center;
     }
 
     .grid-container-demo {
-        grid-template-columns: auto; /* Grid элементы в одну колонку */
+        grid-template-columns: 1fr; /* Одна колонка на малых экранах */
     }
 
     form input[type="text"],
@@ -275,20 +399,37 @@ section h2::before { /* Псевдоэлемент ::before */
     form input[type="password"],
     form input[type="date"],
     form textarea {
-        width: calc(100% - 20px); /* Небольшая коррекция для мобильных */
+        width: calc(100% - 22px); /* Небольшая коррекция для мобильных */
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    section {
+        padding: 20px;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 14px;
+        font-size: 15px; /* Чуть увеличим для читаемости */
     }
 
     header h1 {
-        font-size: 1.5em;
+        font-size: 1.8em; /* Адаптируем размер заголовка */
     }
 
     section {
+        padding: 15px;
+    }
+    
+    form button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    main {
         padding: 15px;
     }
 }
