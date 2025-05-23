@@ -1,0 +1,294 @@
+/* Базовые стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #444;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease; /* CSS Transition */
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #333;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 10px;
+}
+
+article {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+aside {
+    border-left: 3px solid #ccc;
+    padding-left: 10px;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Стили для форм */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form textarea,
+form input[type="file"] {
+    width: calc(100% - 22px); /* Учитываем padding и border */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Важно для корректного расчета ширины */
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* CSS Transition */
+}
+
+form button:hover {
+    background-color: #4cae4c;
+}
+
+form button[type="reset"] {
+    background-color: #f0ad4e;
+}
+
+form button[type="reset"]:hover {
+    background-color: #eea236;
+}
+
+/* Стили для таблиц */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table caption {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:nth-child(even) { /* Псевдокласс :nth-child */
+    background-color: #f9f9f9;
+}
+
+table tfoot {
+    font-weight: bold;
+}
+
+/* Мультимедиа */
+section#multimedia img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+
+/* Демонстрация Flexbox */
+.flex-container-demo {
+    display: flex;
+    justify-content: space-around; /* Распределение элементов */
+    background-color: #dodgerblue;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.flex-item-demo {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 3px;
+    text-align: center;
+    flex-basis: 100px; /* Базовый размер элемента */
+}
+
+/* Демонстрация CSS Grid */
+.grid-container-demo {
+    display: grid;
+    grid-template-columns: auto auto auto; /* 3 колонки равной ширины */
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.grid-item-demo {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+/* Демонстрация CSS Animation */
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 20px auto;
+    animation-name: colorChange; /* Имя анимации */
+    animation-duration: 4s; /* Длительность */
+    animation-iteration-count: infinite; /* Бесконечное повторение */
+    animation-direction: alternate; /* Вперед и назад */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+}
+
+@keyframes colorChange { /* Определение анимации */
+    0%   { background-color: red; transform: scale(1); }
+    50%  { background-color: yellow; transform: scale(1.2) rotate(45deg); }
+    100% { background-color: blue; transform: scale(1); }
+}
+
+/* Псевдоэлементы */
+section h2::before { /* Псевдоэлемент ::before */
+    content: "🔹 ";
+    color: #007bff;
+}
+
+/* Responsive Design - Медиа-запросы */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block; /* Элементы навигации в столбик на малых экранах */
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+    
+    .flex-container-demo {
+        flex-direction: column; /* Flex элементы в колонку */
+    }
+
+    .grid-container-demo {
+        grid-template-columns: auto; /* Grid элементы в одну колонку */
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="date"],
+    form textarea {
+        width: calc(100% - 20px); /* Небольшая коррекция для мобильных */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
